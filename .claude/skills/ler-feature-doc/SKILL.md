@@ -12,10 +12,31 @@ Phase 1 do orchestrator, ou stand-alone quando o QA quiser pré-canonicalizar um
 
 ## Como invocar
 
-Internamente delega pra lib `lib/input-normalizer/` (TypeScript). Execute via:
+Via script `scripts/init-feature.ts` (recomendado — também inicializa `.state.json`):
 
 ```bash
-npx tsx lib/input-normalizer/cli.ts <input-path> outputs/<slug>/normalized-input.md
+npm run init-feature -- <input-path>
+# ou: npx tsx scripts/init-feature.ts <input-path>
+```
+
+Saída (stdout JSON):
+
+```json
+{
+  "slug": "ativar-paineis",
+  "outputDir": "outputs/ativar-paineis",
+  "normalizedPath": "outputs/ativar-paineis/normalized-input.md",
+  "statePath": "outputs/ativar-paineis/.state.json",
+  "summary": { "acs": 3, "gaps": 0, "contexto": 2, "anexos": 0 }
+}
+```
+
+Estado já avança pra `phase-1` automaticamente. Próxima skill (`entrevistar-qa`) lê o normalized + advance pra `phase-2`.
+
+Se você só quer normalizar sem inicializar state:
+
+```bash
+npx tsx lib/input-normalizer/cli.ts <input> <out>
 ```
 
 A lib aceita extensões:

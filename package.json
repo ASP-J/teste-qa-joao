@@ -8,6 +8,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "smoke": "playwright test tests/setup/smoke.spec.ts",
+    "init-feature": "tsx scripts/init-feature.ts",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf outputs node_modules/.vite"
   },
