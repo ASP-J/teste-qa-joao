@@ -1,0 +1,30 @@
+{
+  "name": "twygo-qa-agent",
+  "version": "0.1.0",
+  "description": "Bootstrapper de features QA Twygo — lê doc, entrevista QA, recon via MCPs e emite SKILL.md + ACs canônicos + project.config.json.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke": "playwright test tests/setup/smoke.spec.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf outputs node_modules/.vite"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "dotenv": "^17.4.2",
+    "mammoth": "^1.8.0",
+    "marked": "^14.1.0",
+    "pdf-parse": "^1.1.1",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0",
+    "zod": "^3.23.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

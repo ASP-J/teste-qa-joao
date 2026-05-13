@@ -1,0 +1,5 @@
+Feature: Recuperar senha
+
+AC-01: Usuário clica em "Esqueci senha" e recebe email com link.
+AC-02: Link expira em 30 minutos.
+AC-03: Após reset, login com nova senha funciona.
